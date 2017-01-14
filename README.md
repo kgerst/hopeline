@@ -31,3 +31,5 @@ python test.py
 ```
 ctrl-z
 ```
+### Notes about deployment
+Followed example from https://github.com/zachwill/flask_heroku
