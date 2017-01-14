@@ -12,3 +12,8 @@ class Config(object):
 class StagingConfig(Config):
     DEVELOPMENT = True
     DEBUG = True
+
+
+class ProdConfig(Config):
+    DEVELOPMENT = False
+    DEBUG = False
