@@ -1,12 +1,15 @@
-from flask import Flask, request, redirect, session
-import twilio.twiml
-import decision
+import os
 
+from flask import Flask, request, session
+import twilio.twiml
+
+import decision
 
 # The session object makes use of a secret key.
 SECRET_KEY = 'a secret key'
 app = Flask(__name__)
-app.config.from_object(__name__)
+app.config.from_object(os.environ['APP_SETTINGS'])
+
 
 callers = {
     "+19524848117": "Kim"
