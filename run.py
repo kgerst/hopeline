@@ -16,11 +16,11 @@ callers = {
 @app.route("/", methods=['GET', 'POST'])
 def hello_monkey():
     answer = request.values['Body']
-    hopeline_state_id = session.get('hopeline_id', 0)
+    hopeline_state_id = session.get('hopeline_state_id', 0)
     resp = twilio.twiml.Response()
-    session['hopeline_id'] = hopeline_state_id
     next = decision.next(hopeline_state_id, answer)
-    resp.message(next)
+    resp.message(next['message'])
+    session['hopeline_state_id'] = next['id']
     return str(resp)
 
 
