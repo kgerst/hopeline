@@ -1,18 +1,26 @@
-# /usr/bin/env python
-
-from flask import Flask, request, redirect
+from flask import Flask, request, redirect, session
 import twilio.twiml
+import decision
 
+
+# The session object makes use of a secret key.
+SECRET_KEY = 'a secret key'
 app = Flask(__name__)
+app.config.from_object(__name__)
+
+callers = {
+    "+19524848117": "Kim"
+}
 
 
 @app.route("/", methods=['GET', 'POST'])
 def hello_monkey():
-    """Respond to incoming calls with a simple text message."""
-
+    answer = request.values['Body']
+    hopeline_state_id = session.get('hopeline_id', 0)
     resp = twilio.twiml.Response()
-    with resp.message("Hello, Mobile Monkey") as m:
-        m.media("https://demo.twilio.com/owl.png")
+    session['hopeline_id'] = hopeline_state_id
+    next = decision.next(hopeline_state_id, answer)
+    resp.message(next)
     return str(resp)
 
 
