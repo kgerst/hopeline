@@ -20,7 +20,12 @@ def handle(answer, number, hopeline_state_id, hopeline_timestamp):
     print('%s\t|\t%s\t|\t%s' % (number, hopeline_state_id, answer))
     print('-------------')
 
-    # difference = datetime.now() - hopeline_timestamp
+    try:
+        difference = datetime.now() - hopeline_timestamp
+        print('difference: %s' % difference)
+    except:
+        print('difference failed')
+
     # difference = datetime.now() - datetime.strptime(hopeline_timestamp, '%Y-%m-%d %H:%M:%S.%f')
 
     # if (difference.total_seconds() > 300):
