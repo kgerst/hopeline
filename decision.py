@@ -12,7 +12,7 @@ def next(hopeline_id, answer):
         (5, 'Personal'): options.suggest_how_to_start_convo()
     }
     if hopeline_id == 0:
-        options.ask_feeling()
+        return options.ask_feeling()
     else:
-        options_dict[(hopeline_id, answer)]
+        return options_dict[(hopeline_id, answer)]
 
