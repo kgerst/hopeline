@@ -28,7 +28,7 @@ def suggest_911():
 def ask_to_reach_out():
 	return {
         'id': 3,
-        'message': "Have you talked to someone about this feeling? Reply Yes or No"
+        'message': "You may be feeling sad or anxious. Have you talked to someone about this feeling? Reply Yes or No"
     }
 
 def ask_willingness():
