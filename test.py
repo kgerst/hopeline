@@ -4,6 +4,6 @@ hopeline_id = 0
 
 while True:
     s = input('--> ')
-    next = decision.next(hopeline_id, s)
-    hopeline_id = next['id']
-    print('%s:\t%s' % (next['id'], next['message']))
+    result = decision.next(hopeline_id, s)
+    hopeline_id = result['id']
+    print('%s:\t%s' % (result['id'], result['message']))

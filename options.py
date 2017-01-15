@@ -29,9 +29,17 @@ def ask_type_of_contact():
     }
 
 def give_resources():
+	d1 = "Find a Mental Health Professional"
+	r1 = "https://afsp.org/find-support/find-mental-health-professional/"
+	d2 = "SAMHSA/Substance Abuse and Mental Health Services Administration"
+	r2 = "https://findtreatment.samhsa.gov/"
+	d3 = "MHA/Mental Health America"
+	r3 = "http://www.mentalhealthamerica.net/finding-help"
+	d4 = "National Suicide Prevention Lifeline"
+	r4 = "https://suicidepreventionlifeline.org/help-yourself/"
 	return {
         'id': 6,
-        'message': "Here are some resources... TODO"
+        'message': "Here are some resources:\n\n {0}: {1}\n\n {2}: {3}\n\n {4}: {5}\n\n {6}:{7}".format(d1, r1, d2, r2, d3, r3, d4, r4)
     }
 
 def suggest_how_to_start_convo():
