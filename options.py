@@ -67,7 +67,7 @@ def suggest_how_to_start_convo():
 	l1 = "1. Write down your current emotions and thoughts."
 	l2 = "2. Write down a list of people who bring you joy."
 	l3 = "3. Pick a person from your list and write down ways they could help you. Could it help if they just listen? Could they help you problem solve? Could they help you do something like go for a walk or eat with you?"
-	l4 = "4. Reach out! If they aren't available, you can pick another person from your list and go back to step 3. Did this help? Reply Yes or No"
+	l4 = "4. Reach out! If they aren't available, you can pick another person from your list and go back to step 3."
 	question = "Would you like more help from me? Reply Yes or No?"
 	return {
         'id': "suggest how to start a convo",
