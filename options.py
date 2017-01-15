@@ -107,7 +107,7 @@ def watch_a_short_video():
 def meditate():
     meditations = [
         'https://www.youtube.com/watch?v=dEzbdLn2bJc',
-        'add link here'
+        'https://www.youtube.com/watch?v=Jyy0ra2WcQQ'
     ]
     choice = random.randint(0, (len(meditations) - 1))
     random_meditation = meditations[choice]
