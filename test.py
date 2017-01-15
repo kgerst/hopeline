@@ -1,9 +1,14 @@
-import decision
+import controller
+from datetime import datetime
 
-hopeline_id = 0
+
+number = '###'
+hopeline_state_id = 0
+hopeline_timestamp = datetime.now()
 
 while True:
-    s = input('--> ')
-    result = decision.next(hopeline_id, s)
-    hopeline_id = result['id']
-    print('%s:\t%s' % (result['id'], result['message']))
+    answer = input('--> ')
+    result = controller.handle(answer, number, hopeline_state_id, hopeline_timestamp)
+    hopeline_state_id = result['hopeline_state_id']
+    hopeline_timestamp = result['hopeline_timestamp']
+    print(result['hopeline_message'])
