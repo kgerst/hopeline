@@ -5,9 +5,24 @@ def ask_feeling():
     }
 
 def suggest_911():
-    return {
+	response = "Please call 911."
+	info = "Additional Resources"
+
+	d1 = "National Suicide Prevention Lifeline"
+	r1 = "https://suicidepreventionlifeline.org/"
+	n1 = "1-800-273-8255"
+
+	d2 = "Suicide Awareness Voices of Education (SAVE)"
+	r2 = "http://www.save.org/"
+
+	d3 = "American Foundation for Suicide Prevention (AFSP)"
+	r3 = "https://afsp.org/"
+
+	d4 = "National Alliance on Mental Illness (NAMI)"
+	r4 = "http://www.nami.org/"
+	return {
         'id': 2,
-        'message': "Please call 911."
+        'message': "{0} \n\n{1}:\n\n{2}:\n{3}\n{4} \n\n{5}:\n{6} \n\n{7}:\n{8} \n\n{9}:\n{10}".format(response, info, d1, r1, n1, d2, r2, d3, r3, d4, r4)
     }
 
 def ask_to_reach_out():
@@ -43,9 +58,15 @@ def give_resources():
     }
 
 def suggest_how_to_start_convo():
+	quote = '“… WHEN “I” IS REPLACED WITH “WE”, ILLNESS BECOMES WELLNESS.” -Shannon L. Alder'
+	intro = "steps to get a conversation started: "
+	l1 = "1. Write down your current emotions and thoughts."
+	l2 = "2. Write down a list of people who bring you joy."
+	l3 = "3. Pick a person from your list and write down ways they could help you. Could it help if they just listen? Could they help you problem solve? Could they help you do something like go for a walk or eat with you?"
+	l4 = "4. Reach out! If they aren't available, you can pick another person from your list and go back to step 3. Did this help? Reply Yes or No"
 	return {
         'id': 7,
-        'message': "DEARMAN How to"
+        'message': "{0} \n\n{1} \n\n{2} \n\n{3} \n\n{4} \n\n{5}".format(quote, intro, l1, l2, l3, l4)
     }
 
 def suggest_skills():
