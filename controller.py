@@ -2,22 +2,21 @@ import decision
 from datetime import datetime
 
 
-def handle(answer, number, hopeline_state_id, hopeline_timestamp):
-    if answer.strip().lower() == 'reset':
-        hopeline_state_id = 0
-    else:
-        hopeline_state_id = hopeline_state_id
+TIMEOUT = 300
 
+
+def handle(answer, number, hopeline_state_id, hopeline_timestamp):
     print('-------------')
     print(datetime.now())
-    print('%s\t|\t%s\t|\t%s' % (number, hopeline_state_id, answer))
+    print('%s\t|\t%s\t|\t%s\t|\t%s' % (number, hopeline_timestamp, hopeline_state_id, answer))
     print('-------------')
 
-    # difference = datetime.now() - hopeline_timestamp
-    # difference = datetime.now() - datetime.strptime(hopeline_timestamp, '%Y-%m-%d %H:%M:%S.%f')
-
-    # if (difference.total_seconds() > 300):
-        # hopeline_state_id = 0
+    try:
+        difference = datetime.now() - hopeline_timestamp
+        if (difference.total_seconds() > TIMEOUT):
+            hopeline_state_id = 0
+    except:
+        print('difference failed')
 
     try:
         next = decision.next(hopeline_state_id, answer.strip().lower())
